@@ -1,0 +1,9 @@
+{
+  "appName": "My test app",
+  "theme": {
+    "fontColor": "#00F",
+    "fontSize": "28px"
+  },
+  "darkThemeEnabled": false,
+  "countInitialValue": 1
+}
