@@ -9,7 +9,7 @@ function App() {
   const config = useAppSelector(selectConfig)
   useEffect(() => {
     dispatch(fetchConfig())
-  })
+  }, [dispatch])
   return (
     <div className="App">
       <header className="App-header">

@@ -9,6 +9,8 @@ export const store = configureStore({
   },
 })
 
+window.__MY_APP_STORE__ = store
+
 export type AppDispatch = typeof store.dispatch
 export type RootState = ReturnType<typeof store.getState>
 export type AppThunk<ReturnType = void> = ThunkAction<

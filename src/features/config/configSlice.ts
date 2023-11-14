@@ -20,13 +20,22 @@ export const fetchConfig = createAsyncThunk("config/fetchConfig", async () => {
 export const configSlice = createSlice({
   name: "config",
   initialState,
-  reducers: {},
+  reducers: {
+    setConfig: (
+      state,
+      action: PayloadAction<{ path: string; value: object }>,
+    ) => {
+      state.value[action.payload.path] = action.payload.value
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchConfig.fulfilled, (state, action) => {
       state.value = action.payload
     })
   },
 })
+
+export const { setConfig } = configSlice.actions
 
 export const selectConfig = (state: RootState) => state.config.value
 
